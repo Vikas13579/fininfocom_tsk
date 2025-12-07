@@ -23,7 +23,6 @@ class OrdersListScreen extends StatelessWidget {
           builder: (context, snap) {
             if (snap.connectionState != ConnectionState.done) return Center(child: CircularProgressIndicator());
             final items = snap.data ?? [];
-            // group by order_id
             final Map<int, List<OrderItem>> grouped = {};
             for (var it in items) grouped.putIfAbsent(it.orderId, ()=>[]).add(it);
             final orderIds = grouped.keys.toList()..sort((a,b)=>b.compareTo(a));

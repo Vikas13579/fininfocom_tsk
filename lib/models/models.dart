@@ -1,11 +1,10 @@
-import 'package:flutter/foundation.dart';
 
 class MenuItemModel {
   final int id;
   final String name;
   final int catId;
   final int menuId;
-  final Map<String,double> sizePrice; // e.g. {'Small':1.5,'Large':2.5} or {'':3.0}
+  final Map<String,double> sizePrice;
 
   MenuItemModel({
     required this.id,
@@ -16,7 +15,6 @@ class MenuItemModel {
   });
 
   factory MenuItemModel.fromMap(Map<String, dynamic> m){
-    // sizePrice is stored in CSV in given data; here assume we have parsed
     final sizesField = m['size'] as String? ?? '';
     final pricesField = m['price'] as String? ?? '';
     Map<String,double> map = {};

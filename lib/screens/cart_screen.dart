@@ -34,7 +34,6 @@ class CartScreen extends StatelessWidget {
               Text('Tax (12.5%): ${currency.format(cart.taxAmount)}', style: TextStyle(fontSize:14)),
               SizedBox(height:8),
               ElevatedButton(onPressed: cart.items.isEmpty?null:(){
-                // checkout stub
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Checkout not implemented')));
               }, child: Text('Checkout')),
             ]),
